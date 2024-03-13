@@ -17,10 +17,6 @@ import { client } from "../utils/client.ts";
 import { corsHeaders } from "../_shared/cors.ts";
 // import { handleCORS } from "../_shared/handleCORS.ts";
 
-function delay(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
