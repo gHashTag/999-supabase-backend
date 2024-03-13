@@ -15,9 +15,10 @@ export async function createChatCompletion(
       role: "system",
       content: systemPrompt,
     }],
-    model: "gpt-3.5-turbo",
+    model: "gpt-4-0125-preview",
     stream: false,
     temperature: 0.1,
+    response_format: { type: "json_object" },
   });
 
   return chatCompletion.choices[0].message.content;
